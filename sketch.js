@@ -24,12 +24,12 @@ function preload(){
 function setup() {
   createCanvas(400, 400);
   
-  //creating background
+  //crear fondo
   scene = createSprite(0,0,400,400);
   scene.addImage(backgroundImage);
   scene.scale = 2.5
   
-  // creating bow to shoot arrow
+  //crear arco para disparar las flechas
   bow = createSprite(380,220,20,50);
   bow.addImage(bowImage); 
   bow.scale = 1;
@@ -49,28 +49,28 @@ function draw() {
  
  if(gameState === PLAY)
  {
-      /*Uncomment correct option 
-        according to PLAY state*/  
-      // // moving ground
+      /*Descomenta la opción correcta 
+        en función del estado PLAY*/  
+      // // mover el suelo
       // scene.velocityX = -3 
       // //destroy bow
       // bow.destroy();
-      // //reset the background
+      // //reiniciar el fondo
       // if (scene.x < 0){
       //     scene.x = scene.width/2;
       //    }
-      // //moving bow
+      // //mover arco
       // bow.y = World.mouseY      
-      // //stop background movement
+      // //detener el movimiento del fondo
       // scene.velocityX = 0;
 
   
-   // release arrow when space key is pressed
+   //Liberar las flechas al presionar la barra espaciadora
   if (keyDown("space")) {
     createArrow();  
   }
   
-  //creating continous enemies
+  //crear enemigos continuos
   var select_balloon = Math.round(random(1,4));
   
   if (World.frameCount % 100 == 0) {
@@ -90,19 +90,19 @@ function draw() {
 
 
   if (gameState === END) {
-    /*Uncomment correct option 
-      according to END state*/  
-      // // moving ground
+    /*Descomenta la opción correcta 
+      en función del estado END*/  
+      // // mover el suelo
       // scene.velocityX = -3 
-      // //destroy bow
+      // //destruir el arco
       // bow.destroy();
-      // //reset the background
+      // //reiniciar el fondo
       // if (scene.x < 0){
       //     scene.x = scene.width/2;
       //    }
-      // //moving bow
+      // //mover el arco
       // bow.y = World.mouseY      
-      // //stop background movement
+      // //detener el movimiento del fondo
       // scene.velocityX = 0;
 
   }
@@ -118,7 +118,7 @@ if (frameCount>1000) {
  
   
   drawSprites();
-  text("Score: "+ score, 300,50);
+  text("Puntuación: "+ score, 300,50);
 }
 
 
@@ -166,7 +166,7 @@ function pinkBalloon() {
 
 }
 
-// Creating  arrows for bow
+// Crear flechas para el arco
  function createArrow() {
   var arrow= createSprite(100, 100, 60, 10);
   arrow.addImage(arrowImage);
