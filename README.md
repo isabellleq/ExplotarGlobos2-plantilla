@@ -1,1 +1,1 @@
-# Project-Template BB2
+# ExplotarGlobos2-plantilla
